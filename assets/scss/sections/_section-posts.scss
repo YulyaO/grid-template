@@ -1,0 +1,138 @@
+    .posts {
+        margin: 0;
+        @include lg-min {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        @include lg-md {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        @include md {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        &-container {
+            max-width: 1340px;
+            margin: auto;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        &__grid {
+            display: grid;
+            @include lg-min {
+                grid-gap: 10px;
+                grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+                grid-template-columns: repeat(4, 1fr);
+            }
+            @include lg-md {
+                grid-gap: 10px;
+                grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @include md-sm {
+                grid-gap: 10px;
+                grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+                grid-template-columns: 1fr 1fr;
+            }
+            @include sm {
+                grid-gap: 10px;
+                grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+                grid-template-columns: 1fr;
+            }
+        }
+        &__button {
+            padding-top: $gap;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+    h2 {
+        font-family: $font-header;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        color: $color-primary;
+        margin-top: 0;
+        padding-bottom: 30px;
+        @include lg-min {
+            font-size: 2.5rem;
+        }
+        @include lg-md {
+            font-size: 32px;
+        }
+        @include md-sm {
+            font-size: 24px;
+        }
+    }
+    
+    h3 {
+        font-size: 1.125em;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        color: $color-gray;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        transition: color 0.5s;
+        &:first-of-type {
+            padding-top: 50px;
+            grid-column: 1 / 2;
+        }
+    }
+    
+    .post-item {
+        background-color: #f2f2f2;
+        text-align: center;
+        height: 550px;
+        text-align: center;
+        align-content: center;
+        grid-template-rows: 1fr 1fr;
+        transition: transform 0.5s;
+        &_link {
+            color: $color-gray;
+        }
+        &__caption {
+            padding: 10px;
+            letter-spacing: 0.01em;
+            display: grid;
+            grid-gap: 20px;
+        }
+        &:last-of-type {
+            grid-column: 5 / 6;
+        }
+        &__caption p {
+            color: $color-gray;
+            transition: color 0.5s;
+        }
+        &__image {
+            display: flex;
+            overflow: hidden;
+            align-content: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            object-fit: cover;
+            & img {
+                transition: transform 0.5s;
+            }
+        }
+        &:hover {
+            background-color: #d8d8d8;
+        }
+        &:hover .post-item__image img {
+            transform: scale(1.1);
+        }
+        &:hover h3 {
+            color: $color-primary;
+        }
+        &:hover p {
+            color: $color-primary;
+        }
+    }
+    
+    @for $i from 1 through 6 {
+        .post-item:nth-of-type(#{$i}) {
+            grid-area: p#{$i};
+        }
+    }
