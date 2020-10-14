@@ -8,7 +8,7 @@
         padding-top: 80px;
         padding-bottom: 80px;
     }
-    @include md-sm {
+    @include md {
         padding-top: 60px;
         padding-bottom: 60px;
     }
@@ -81,7 +81,7 @@ h2 {
 }
 
 .about__content p:first-of-type {
-    margin-top: 0 auto;
+    margin-top: 0;
     position: relative;
 }
 

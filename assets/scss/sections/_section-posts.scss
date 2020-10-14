@@ -1,4 +1,5 @@
     .posts {
+       
         margin: 0;
         @include lg-min {
             padding-top: 100px;
@@ -14,29 +15,34 @@
         }
         &-container {
             max-width: 1340px;
-            margin: auto;
             padding-right: 20px;
             padding-left: 20px;
+            margin: auto;
+          display: grid;
         }
+
+        
         &__grid {
             display: grid;
+            grid-gap: 10px;
+            padding-bottom: 20px;
             @include lg-min {
-                grid-gap: 10px;
+                
                 grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
                 grid-template-columns: repeat(4, 1fr);
             }
             @include lg-md {
-                grid-gap: 10px;
+                
                 grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
                 grid-template-columns: repeat(3, 1fr);
             }
             @include md-sm {
-                grid-gap: 10px;
+                
                 grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
                 grid-template-columns: 1fr 1fr;
             }
             @include sm {
-                grid-gap: 10px;
+                
                 grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
                 grid-template-columns: 1fr;
             }
@@ -66,7 +72,7 @@
         }
     }
     
-    h3 {
+    .posts h3 {
         font-size: 1.125em;
         font-weight: bold;
         letter-spacing: 0.05em;
@@ -85,18 +91,26 @@
         background-color: #f2f2f2;
         text-align: center;
         height: 550px;
-        text-align: center;
+       
         align-content: center;
         grid-template-rows: 1fr 1fr;
         transition: transform 0.5s;
+
+        
         &_link {
+
             color: $color-gray;
+             display: grid;
+             overflow: hidden;
+             height: 100%;
+           
+              
         }
         &__caption {
-            padding: 10px;
+            padding: 20px;
             letter-spacing: 0.01em;
             display: grid;
-            grid-gap: 20px;
+           
         }
         &:last-of-type {
             grid-column: 5 / 6;
@@ -106,14 +120,18 @@
             transition: color 0.5s;
         }
         &__image {
+           
             display: flex;
             overflow: hidden;
             align-content: center;
             justify-content: center;
             background-size: cover;
-            background-position: center;
-            object-fit: cover;
+            
+            
             & img {
+                height: 300px;
+                width: 100%;
+                object-fit: cover;
                 transition: transform 0.5s;
             }
         }

@@ -1,59 +1,89 @@
-.form {
+ .form {
     padding: 30px 0;
     background-color: $color-primary;
-    height: 120px;
+    
+
     &__container {
         max-width: 1340px;
         margin: auto;
         padding-right: 20px;
         padding-left: 20px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
+        grid-gap: 0px;
         justify-items: center;
         align-items: center;
+        @include lg-min {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include lg-md {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include md-sm {
+            grid-template-columns: 1fr 1fr;
+        }
     }
-    &-item {
-        width: 420px;
-    }
-}
+    
+ }
 
 .form .btn-accent {
-    width: 100%;
+    width: 100% !important;
     color: #ffffff;
     border-color: rgba(255, 255, 255, 0);
     border-bottom-color: rgba(255, 255, 255, 0.2);
     background-color: rgba(255, 255, 255, 0.1);
     transition: border 0.5s;
     transition: background-color 0.5s;
+
     &:hover {
         border: 2px solid #ffffff;
         background-color: $color-accent;
     }
 }
-
-.form-item__input {
-    display: block;
-    width: 100%;
-    height: 60px;
-    color: #ffffff;
-    letter-spacing: 0.15em;
-    font-size: 1.125rem;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0);
-    border-bottom-color: rgba(255, 255, 255, 0.25);
-    transition: background-color 0.5s;
-    transition: border-bottom-color 0.5s;
-    &::placeholder {
-        padding: 20px;
+.form-item:first-of-type {
+    @include md-sm {
+        grid-column: 1 / span 2;
     }
 }
 
-.form-item__input:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-    border-bottom-color: #ffffff;
+
+.form-item__input {
+    display: block;
+    width: 100% !important;
+    height: 60px;
+    padding-right: 30px;
+    padding-left: 30px;
+    
+    transition: background-color 0.5s, border-color 0.5s;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-bottom-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.05);
+    font-size: 1.125rem;
+
+    
+   
+    
+    &::placeholder {
+        color: #637588;
+        
+}
+ }
+
+    
+
+.form-item__input:hover::placeholder,
+.form-item__input:focus::placeholder {
+  color: #8c9bab;
 }
 
-input {
-    overflow: visible;
+
+
+
+.form-item__input:focus,
+.form-item__input:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  border-bottom-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
 }
+
