@@ -886,7 +886,7 @@ h2 {
 }
 
 .about__content p:first-of-type {
-  margin-top: 0 auto;
+  margin-top: 0;
   position: relative;
 }
 
@@ -917,7 +917,6 @@ h2 {
 .form {
   padding: 30px 0;
   background-color: #2d3651;
-  height: 120px;
 }
 
 .form__container {
@@ -926,20 +925,15 @@ h2 {
   padding-right: 20px;
   padding-left: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 0px;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.form-item {
-  width: 420px;
-}
-
 .form .btn-accent {
-  width: 100%;
+  width: 100% !important;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
   border-bottom-color: rgba(255, 255, 255, 0.2);
@@ -959,49 +953,67 @@ h2 {
 
 .form-item__input {
   display: block;
-  width: 100%;
+  width: 100% !important;
   height: 60px;
-  color: #ffffff;
+  padding-right: 30px;
+  padding-left: 30px;
+  -webkit-transition: background-color 0.5s, border-color 0.5s;
+  -o-transition: background-color 0.5s, border-color 0.5s;
+  transition: background-color 0.5s, border-color 0.5s;
   letter-spacing: 0.15em;
-  font-size: 1.125rem;
-  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0);
   border-bottom-color: rgba(255, 255, 255, 0.25);
-  -webkit-transition: background-color 0.5s;
-  -o-transition: background-color 0.5s;
-  transition: background-color 0.5s;
-  -webkit-transition: border-bottom-color 0.5s;
-  -o-transition: border-bottom-color 0.5s;
-  transition: border-bottom-color 0.5s;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1.125rem;
 }
 
 .form-item__input::-webkit-input-placeholder {
-  padding: 20px;
+  color: #637588;
 }
 
 .form-item__input::-moz-placeholder {
-  padding: 20px;
+  color: #637588;
 }
 
 .form-item__input:-ms-input-placeholder {
-  padding: 20px;
+  color: #637588;
 }
 
 .form-item__input::-ms-input-placeholder {
-  padding: 20px;
+  color: #637588;
 }
 
 .form-item__input::placeholder {
-  padding: 20px;
+  color: #637588;
 }
 
+.form-item__input:hover::-webkit-input-placeholder, .form-item__input:focus::-webkit-input-placeholder {
+  color: #8c9bab;
+}
+
+.form-item__input:hover::-moz-placeholder, .form-item__input:focus::-moz-placeholder {
+  color: #8c9bab;
+}
+
+.form-item__input:hover:-ms-input-placeholder, .form-item__input:focus:-ms-input-placeholder {
+  color: #8c9bab;
+}
+
+.form-item__input:hover::-ms-input-placeholder, .form-item__input:focus::-ms-input-placeholder {
+  color: #8c9bab;
+}
+
+.form-item__input:hover::placeholder,
+.form-item__input:focus::placeholder {
+  color: #8c9bab;
+}
+
+.form-item__input:focus,
 .form-item__input:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.15);
   border-bottom-color: #ffffff;
-}
-
-input {
-  overflow: visible;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .posts {
@@ -1010,13 +1022,16 @@ input {
 
 .posts-container {
   max-width: 1340px;
-  margin: auto;
   padding-right: 20px;
   padding-left: 20px;
+  margin: auto;
+  display: grid;
 }
 
 .posts__grid {
   display: grid;
+  grid-gap: 10px;
+  padding-bottom: 20px;
 }
 
 .posts__button {
@@ -1038,7 +1053,7 @@ h2 {
   padding-bottom: 30px;
 }
 
-h3 {
+.posts h3 {
   font-size: 1.125em;
   font-weight: bold;
   letter-spacing: 0.05em;
@@ -1055,7 +1070,7 @@ h3 {
   transition: color 0.5s;
 }
 
-h3:first-of-type {
+.posts h3:first-of-type {
   padding-top: 50px;
   grid-column: 1 / 2;
 }
@@ -1064,7 +1079,6 @@ h3:first-of-type {
   background-color: #f2f2f2;
   text-align: center;
   height: 550px;
-  text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
   grid-template-rows: 1fr 1fr;
@@ -1077,13 +1091,15 @@ h3:first-of-type {
 
 .post-item_link {
   color: #637588;
+  display: grid;
+  overflow: hidden;
+  height: 100%;
 }
 
 .post-item__caption {
-  padding: 10px;
+  padding: 20px;
   letter-spacing: 0.01em;
   display: grid;
-  grid-gap: 20px;
 }
 
 .post-item:last-of-type {
@@ -1108,12 +1124,13 @@ h3:first-of-type {
       -ms-flex-pack: center;
           justify-content: center;
   background-size: cover;
-  background-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .post-item__image img {
+  height: 300px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   -o-transition: transform 0.5s;
@@ -1218,7 +1235,7 @@ h3:first-of-type {
 .footer__logo span:first-of-type {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  font-weight: Thin;
+  font-weight: 100;
   letter-spacing: 0.33em;
 }
 
@@ -1287,12 +1304,14 @@ hr {
   .about__content p {
     font-size: 18px;
   }
+  .form__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .posts {
     padding-top: 100px;
     padding-bottom: 100px;
   }
   .posts__grid {
-    grid-gap: 10px;
     grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
     grid-template-columns: repeat(4, 1fr);
   }
@@ -1334,12 +1353,14 @@ hr {
   .about__content p:first-of-type::after {
     right: -20px;
   }
+  .form__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .posts {
     padding-top: 80px;
     padding-bottom: 80px;
   }
   .posts__grid {
-    grid-gap: 10px;
     grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1383,6 +1404,10 @@ hr {
   .header-content__title {
     margin: 0 0 33px;
   }
+  .about {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   .posts {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -1394,10 +1419,6 @@ hr {
     grid-gap: 10px;
     grid-template-areas: "a1 a2" "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
     grid-template-columns: repeat(2, 1fr);
-  }
-  .about {
-    padding-top: 60px;
-    padding-bottom: 60px;
   }
   .about {
     grid-template-columns: 1fr 236px;
@@ -1413,8 +1434,13 @@ hr {
   .about__content p:first-of-type::after {
     right: -10px;
   }
+  .form__container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-item:first-of-type {
+    grid-column: 1 / span 2;
+  }
   .posts__grid {
-    grid-gap: 10px;
     grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
     grid-template-columns: 1fr 1fr;
   }
@@ -1456,7 +1482,6 @@ hr {
     display: none;
   }
   .posts__grid {
-    grid-gap: 10px;
     grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
     grid-template-columns: 1fr;
   }
