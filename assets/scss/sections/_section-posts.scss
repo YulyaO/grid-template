@@ -107,11 +107,12 @@
               
         }
         &__caption {
-            padding: 20px;
+            padding: $gap;
             letter-spacing: 0.01em;
             display: grid;
            
         }
+        
         &:last-of-type {
             grid-column: 5 / 6;
         }
