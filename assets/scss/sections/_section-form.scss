@@ -12,6 +12,7 @@ form {
     padding-left: 20px;
     display: grid;
     grid-gap: 20px;
+grid-template-areas: "f1 f2 f3";
     @include lg-min {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -30,7 +31,7 @@ form {
 .form .btn-accent {
   
   width: 100%;
-  
+
     color: #ffffff;
     border-color: rgba(255, 255, 255, 0);
     border-bottom-color: rgba(255, 255, 255, 0.2);
@@ -45,7 +46,9 @@ form {
     background-color: #d66926;
   }
 
-
+.form-item {
+    width: 100%;
+}
 .form-item__input {
     border: none;
     padding-right: 30px;
