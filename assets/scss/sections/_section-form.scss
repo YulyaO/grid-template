@@ -12,7 +12,7 @@ form {
     padding-left: 20px;
     display: grid;
     grid-gap: 20px;
-grid-template-areas: "f1 f2 f3";
+    grid-template-areas: "f1 f2 f3";
     @include lg-min {
         grid-template-columns: repeat(3, 1fr);
     }
