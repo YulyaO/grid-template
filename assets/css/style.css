@@ -914,58 +914,65 @@ h2 {
   max-width: 100%;
 }
 
-.form {
+form {
   padding: 30px 0;
   background-color: #2d3651;
 }
 
-.form__container {
+.form-container {
   max-width: 1340px;
   margin: auto;
   padding-right: 20px;
   padding-left: 20px;
   display: grid;
-  grid-gap: 0px;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-gap: 20px;
+  grid-template-areas: "f1 f2 f3";
 }
 
 .form .btn-accent {
-  width: 100% !important;
+  width: 100%;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
   border-bottom-color: rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.1);
-  -webkit-transition: border 0.5s;
-  -o-transition: border 0.5s;
-  transition: border 0.5s;
+}
+
+.form .btn-accent:hover,
+.form .btn-accent:focus {
+  cursor: pointer;
+  border-color: #ffffff;
+  background-color: #d66926;
+}
+
+.form-item {
+  width: 100%;
+}
+
+.form-item__input {
+  border: none;
+  padding-right: 30px;
+  padding-left: 30px;
+  height: 60px;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  outline: none;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(255, 255, 255, 0.025);
+  -webkit-transition: border-color 0.5s;
+  -o-transition: border-color 0.5s;
+  transition: border-color 0.5s;
   -webkit-transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
   transition: background-color 0.5s;
 }
 
-.form .btn-accent:hover {
-  border: 2px solid #ffffff;
-  background-color: #d66926;
-}
-
-.form-item__input {
-  display: block;
-  width: 100% !important;
-  height: 60px;
-  padding-right: 30px;
-  padding-left: 30px;
-  -webkit-transition: background-color 0.5s, border-color 0.5s;
-  -o-transition: background-color 0.5s, border-color 0.5s;
-  transition: background-color 0.5s, border-color 0.5s;
-  letter-spacing: 0.15em;
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0);
-  border-bottom-color: rgba(255, 255, 255, 0.25);
-  background-color: rgba(255, 255, 255, 0.05);
-  font-size: 1.125rem;
+.form-item__input:focus, .form-item__input:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  border-bottom-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .form-item__input::-webkit-input-placeholder {
@@ -988,32 +995,24 @@ h2 {
   color: #637588;
 }
 
-.form-item__input:hover::-webkit-input-placeholder, .form-item__input:focus::-webkit-input-placeholder {
+.form-item__input::-webkit-input-placeholder:focus, .form-item__input::-webkit-input-placeholder:hover {
   color: #8c9bab;
 }
 
-.form-item__input:hover::-moz-placeholder, .form-item__input:focus::-moz-placeholder {
+.form-item__input::-moz-placeholder:focus, .form-item__input::-moz-placeholder:hover {
   color: #8c9bab;
 }
 
-.form-item__input:hover:-ms-input-placeholder, .form-item__input:focus:-ms-input-placeholder {
+.form-item__input:-ms-input-placeholder:focus, .form-item__input:-ms-input-placeholder:hover {
   color: #8c9bab;
 }
 
-.form-item__input:hover::-ms-input-placeholder, .form-item__input:focus::-ms-input-placeholder {
+.form-item__input::-ms-input-placeholder:focus, .form-item__input::-ms-input-placeholder:hover {
   color: #8c9bab;
 }
 
-.form-item__input:hover::placeholder,
-.form-item__input:focus::placeholder {
+.form-item__input::placeholder:focus, .form-item__input::placeholder:hover {
   color: #8c9bab;
-}
-
-.form-item__input:focus,
-.form-item__input:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  border-bottom-color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .posts {
@@ -1030,8 +1029,7 @@ h2 {
 
 .posts__grid {
   display: grid;
-  grid-gap: 10px;
-  padding-bottom: 20px;
+  grid-gap: 20px;
 }
 
 .posts__button {
@@ -1304,7 +1302,7 @@ hr {
   .about__content p {
     font-size: 18px;
   }
-  .form__container {
+  .form-container {
     grid-template-columns: repeat(3, 1fr);
   }
   .posts {
@@ -1353,7 +1351,7 @@ hr {
   .about__content p:first-of-type::after {
     right: -20px;
   }
-  .form__container {
+  .form-container {
     grid-template-columns: repeat(3, 1fr);
   }
   .posts {
@@ -1434,7 +1432,7 @@ hr {
   .about__content p:first-of-type::after {
     right: -10px;
   }
-  .form__container {
+  .form-container {
     grid-template-columns: 1fr 1fr;
   }
   .form-item:first-of-type {
@@ -1442,7 +1440,7 @@ hr {
   }
   .posts__grid {
     grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   h2 {
     font-size: 24px;

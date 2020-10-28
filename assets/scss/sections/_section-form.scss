@@ -1,9 +1,7 @@
-form {
-    padding: 30px 0;
-    background-color: $color-primary;
+.form {
+  padding: 30px 0;
 
-    
-    
+  background-color: #2d3651;
 }
 .form-container {
     max-width: 1340px;
@@ -12,7 +10,7 @@ form {
     padding-left: 20px;
     display: grid;
     grid-gap: 20px;
-    grid-template-areas: "f1 f2 f3";
+    
     @include lg-min {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -32,6 +30,7 @@ form {
   
   width: 100%;
 
+
     color: #ffffff;
     border-color: rgba(255, 255, 255, 0);
     border-bottom-color: rgba(255, 255, 255, 0.2);
@@ -48,6 +47,7 @@ form {
 
 .form-item {
     width: 100%;
+    grid-template-areas: "f1 f2 f3";
 }
 .form-item__input {
     border: none;
@@ -90,3 +90,10 @@ form {
         grid-column: 1 / span 2;
     }
 }
+@for $i from 1 through 3 {
+    .form__item:nth-of-type(#{$i}) {
+      grid-area: f#{$i};
+    }
+  }
+
+
