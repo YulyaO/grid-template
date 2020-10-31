@@ -36,6 +36,12 @@
     justify-content: center;
 
     padding-top: $gap;
+    
+  }
+}
+.skills__button .btn-accent {
+  @include sm {
+    min-width: 350px;
   }
 }
 
