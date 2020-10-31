@@ -929,7 +929,7 @@ h2 {
 }
 
 .form .btn-accent {
-  width: 100%;
+  width: 100% !important;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0);
   border-bottom-color: rgba(255, 255, 255, 0.2);
@@ -945,7 +945,6 @@ h2 {
 
 .form-item {
   width: 100%;
-  grid-template-areas: "f1 f2 f3";
 }
 
 .form-item__input {
@@ -1013,18 +1012,6 @@ h2 {
 
 .form-item__input::placeholder:focus, .form-item__input::placeholder:hover {
   color: #8c9bab;
-}
-
-.form__item:nth-of-type(1) {
-  grid-area: f1;
-}
-
-.form__item:nth-of-type(2) {
-  grid-area: f2;
-}
-
-.form__item:nth-of-type(3) {
-  grid-area: f3;
 }
 
 .posts-container {
