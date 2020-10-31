@@ -48,7 +48,7 @@
 
 .form-item {
     width: 100%;
-    grid-template-areas: "f1 f2 f3";
+    
 }
 .form-item__input {
     border: none;
@@ -91,10 +91,6 @@
         grid-column: 1 / span 2;
     }
 }
-@for $i from 1 through 3 {
-    .form__item:nth-of-type(#{$i}) {
-      grid-area: f#{$i};
-    }
-  }
+
 
 
