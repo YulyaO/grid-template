@@ -2,16 +2,16 @@
 .header-menu {
   position: absolute;
   top: 0;
-  right: 0;
   left: 0;
+  z-index: 1;
+  width: 100%;
 
   @include md {
     background-color: rgba($color-gray-dark, 0.25);
+    box-shadow: -3px 3px 20px -10px darken($color-gray-dark, 40%);
   }
 
   &__container {
-    position: relative;
-
     display: grid;
     align-items: center;
 

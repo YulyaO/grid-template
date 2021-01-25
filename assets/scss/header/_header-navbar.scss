@@ -1,38 +1,87 @@
-
 .header-navbar {
-  @include md {
-    display: flex;
-    justify-content: flex-end;
+  display: grid;
+  align-items: center;
+
+  letter-spacing: 0.1em;
+
+  justify-items: end;
+
+  &__list {
+    @include md-min {
+      display: grid;
+      justify-content: flex-end;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      margin: 0 -10px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    @include md {
+      position: absolute;
+      top: 100%;
+      right: 30px;
+      display: none;
+      text-align: right;
+      background-color: rgba($color-gray-dark, 0.9);
+      box-shadow: -3px 3px 20px -10px darken($color-gray-dark, 40%);
+      margin: 0 -10px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+
+  &__item {
+    @include md-min {
+      margin-left: $gap;
+    }
+    @include md {
+      margin: $gap 10px;
+    }
+  }
+
+  &__link {
+    display: block;
+    transition: color 0.5s;
+    font-size: 1.125rem;
+
+    @include md-min {
+      padding: $gap 10px;
+    }
+    @include md {
+      padding: 10px $gap;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-accent;
+    }
   }
 
   &__btn {
     position: relative;
-
     width: 30px;
-    height: 22.5px;
-
+    height: 23px;
+    margin: $gap 0;
     cursor: pointer;
     transition: 0.5s ease-in-out;
     transform: rotate(0deg);
 
     @include md-min {
       display: none;
+
     }
     @include md {
       display: block;
     }
+    
 
     &-row {
       position: absolute;
-
       display: block;
-
       width: 50%;
       height: 3px;
-
       transition: 0.25s ease-in-out;
       transform: rotate(0deg);
-
       opacity: 1;
       background: $color-light;
 
@@ -108,46 +157,6 @@
         left: calc(50% - 2.5px);
       }
     }
-  }
-
-  &__list {
-    margin: 0 (-$gap) 0 0;
-    padding: 0;
-
-    list-style: none;
-
-    font-size: 1.125rem;
-
-    @include md-min {
-      display: grid;
-      justify-content: end;
-
-      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-    }
-    @include md {
-      position: absolute;
-      top: 100%;
-      right: $gap * 2;
-
-      display: none;
-
-      text-align: right;
-
-      background-color: rgba($color-gray-dark, 0.9);
-    }
-  }
-
-  &__item {
-    padding: $gap;
-  }
-
-  &__link {
-    transition: color 0.5s;
-
-    &:hover {
-      color: $color-accent;
-    }
+  
   }
 }
-
-

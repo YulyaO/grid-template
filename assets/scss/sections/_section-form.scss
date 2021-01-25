@@ -1,101 +1,99 @@
 .form {
   padding: 30px 0;
+  background-color: $color-primary;
 
-  background-color: #2d3651;
- 
-}
-.form-container {
-    max-width: 1340px;
-    margin: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-    display: grid;
-    grid-gap: 20px;
+
+    &-container {
+        max-width: 1340px;
+        margin: auto;
+        padding-right: 20px;
+        padding-left: 20px;
+        display: grid;
+        grid-gap: 20px;
+        
+        @include lg-min {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include lg-md {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @include md-sm {
+            grid-template-columns: 1fr 1fr;
     
-    @include lg-min {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    @include lg-md {
-        grid-template-columns: repeat(3, 1fr);
-
-    }
-    @include md-sm {
-        grid-template-columns: 1fr 1fr;
-
+            
+        }
         
     }
-    
 }
 
+
 .btn-form {
-    
-    height: 60px;
-    padding: 18px 20px;
-    border: 2px solid #2d3651;
-    background-color: rgba(45, 54, 81, 0.8);
-    font-size: 1.125rem;
+  display: block;
+   height: 60px;
+   padding: 18px $gap;
+   transition: background-color 0.5s, border-color 0.5s;
+   text-align: center;
+   letter-spacing: 0.1em;
+   border-width: 2px;
+   font-size: 1.125rem;
+    background-color: rgba($color-primary, 0.10);
     width: 100%;
-
-
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0);
-    border-bottom-color: rgba(255, 255, 255, 0.2);
+    color: $color-light;
+    border-color: rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.20);
     background-color: rgba(255, 255, 255, 0.1);
+
+    &:hover,
+    &:focus {
+      cursor: pointer; 
+      border-color: $color-light;
+      background-color: $color-accent;
+    }
   }
   
-  .btn-form:hover,
-  .btn-form:focus {
-    cursor: pointer;
-  
-    border-color: #ffffff;
-    background-color: #d66926;
-  }
+ 
 
 .form-item {
-    width: 100% !important;
+    &:nth-of-type(1) {
+        @include md-sm {
+            grid-column: 1 / span 2;
+        }
+    }
     
 }
 .form-item__input {
-    border: none;
+    display: block;
+    letter-spacing: 0.15em;
     padding-right: 30px;
     padding-left: 30px;
     height: 60px;
     width: 100%;
-    font-family: $font-main;
-    font-size: 18px;
-    outline: none;
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05) ;
-
-    border: 2px solid rgba(255, 255, 255, 0);
-    border-bottom-color: rgba(255, 255, 255, 0.025);
-     transition: border-color 0.5s;
+    font-size: 1.125rem;
+    color: $color-light;
+    background-color: rgba($color-light, 0.05) ;
+    border: 2px solid rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.25);
+    transition: border-color 0.5s;
     transition: background-color 0.5s;
 
+    &::placeholder {
+        color: $color-gray;
+    }
     &:focus ,
     &:hover {
         border-color: rgba(255, 255, 255, 0.15);
         border-bottom-color: #ffffff;
         background-color: rgba(255, 255, 255, 0.15);
 
-    }
-    &::placeholder {
-        color: #637588;
-
-
         &:focus ,
         &:hover {
-         color: #8c9bab;   
-        }
+            color: lighten($color-gray, 15%);   
+            }
+
     }
     
 }
 
-.form-item:first-of-type {
-    @include md-sm {
-        grid-column: 1 / span 2;
-    }
-}
 
 
 

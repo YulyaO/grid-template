@@ -1,5 +1,7 @@
 .skills {
-  padding: ($gap / 2) ($gap / 2) ($gap * 2);
+  @include sm-min {
+    padding: ($gap / 2) ($gap / 2) ($gap * 2);
+  }
 
   @include sm {
     padding: $gap;
@@ -7,7 +9,7 @@
 
   &__container {
     display: grid;
-    
+    padding-bottom: $gap;
 
     @include lg-min {
       grid-gap: 10px;
@@ -47,12 +49,11 @@
 
 .skill-item {
   position: relative;
-
   overflow: hidden;
-
   min-height: calc(33.333vh - 13.333px);
-
   background-color: $color-primary;
+  padding: $gap;
+  justify-items: center;
 
   &__overlay {
     position: absolute;
@@ -61,9 +62,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-
     transition: opacity 0.5s;
-
     opacity: 0.8;
     background-color: $color-primary;
   }
@@ -74,9 +73,8 @@
     right: 0;
     bottom: 0;
     left: 0;
-
     transition: transform 0.5s;
-
+    background-color: $color-primary;
     background-position: 50% 50%;
     background-size: cover;
   }
@@ -88,8 +86,11 @@
     right: 0;
     bottom: 0;
     left: 0;
-
+    letter-spacing: 0.1em;
     margin: 0;
+    @include md-min {
+      font-size: 1.25rem;
+    }
     @include md {
       font-size: 1.25rem;
     }
@@ -101,16 +102,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 100%;
     height: 100%;
     padding: $gap;
-
     transition: color 0.5s;
-    letter-spacing: 0.1em;
-
-    font-size: 1.25rem;
-    
   }
 
   &:hover .skill-item__overlay {
