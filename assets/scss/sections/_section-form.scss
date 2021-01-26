@@ -78,22 +78,20 @@
 
     &::placeholder {
         color: $color-gray;
-    }
-    &:focus ,
-    &:hover {
-        border-color: rgba(255, 255, 255, 0.15);
-        border-bottom-color: #ffffff;
-        background-color: rgba(255, 255, 255, 0.15);
-
         &:focus ,
         &:hover {
             color: lighten($color-gray, 15%);   
             }
-
     }
     
+        
 }
 
 
 
-
+// .form-item__input:hover, 
+.form-item__input:focus {
+        border-color: rgba($color-light, 0.15);
+        border-bottom-color: $color-light;
+        background-color: rgba($color-light, 0.15);
+    }

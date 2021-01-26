@@ -541,6 +541,10 @@ p {
   font-size: 1.125rem;
 }
 
+input {
+  outline: none;
+}
+
 .header {
   position: relative;
   display: grid;
@@ -1001,14 +1005,30 @@ p {
   color: #637588;
 }
 
-.form-item__input:focus, .form-item__input:hover {
+.form-item__input::-webkit-input-placeholder:focus, .form-item__input::-webkit-input-placeholder:hover {
+  color: #8c9bab;
+}
+
+.form-item__input::-moz-placeholder:focus, .form-item__input::-moz-placeholder:hover {
+  color: #8c9bab;
+}
+
+.form-item__input:-ms-input-placeholder:focus, .form-item__input:-ms-input-placeholder:hover {
+  color: #8c9bab;
+}
+
+.form-item__input::-ms-input-placeholder:focus, .form-item__input::-ms-input-placeholder:hover {
+  color: #8c9bab;
+}
+
+.form-item__input::placeholder:focus, .form-item__input::placeholder:hover {
+  color: #8c9bab;
+}
+
+.form-item__input:focus {
   border-color: rgba(255, 255, 255, 0.15);
   border-bottom-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.15);
-}
-
-.form-item__input:focus:focus, .form-item__input:focus:hover, .form-item__input:hover:focus, .form-item__input:hover:hover {
-  color: #8c9bab;
 }
 
 .posts-container {
@@ -1434,6 +1454,9 @@ hr {
     margin-bottom: 36px;
     text-align: center;
     font-size: 1.5rem;
+  }
+  .btn-accent {
+    width: 100%;
   }
   .header-content__buttons {
     -webkit-box-align: center;
