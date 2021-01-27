@@ -1235,6 +1235,12 @@ hr {
   }
 }
 
+@media (min-height: 691px) {
+  .skills__container {
+    grid-auto-rows: calc(33.33333vh - 20px * 0.66666);
+  }
+}
+
 @media (min-width: 768px) {
   .header-navbar__list {
     display: grid;
@@ -1397,7 +1403,7 @@ hr {
     margin: 0 0 33px;
   }
   .skill-item__title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
   .about {
     padding-top: 60px;
@@ -1446,6 +1452,12 @@ hr {
   .posts__grid {
     grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-height: 690px) {
+  .skills__container {
+    grid-auto-rows: calc(230px - 20px * 0.66666);
   }
 }
 

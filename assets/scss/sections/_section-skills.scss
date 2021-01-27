@@ -31,6 +31,12 @@
       grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
       grid-template-columns: 1fr;
     }
+    @media (min-height: 691px) {
+      grid-auto-rows: calc(33.33333vh - #{$gap} * 0.66666);
+    }
+    @media (max-height: 690px) {
+      grid-auto-rows: calc(230px - #{$gap} * 0.66666);
+    }
   }
 
   &__button {
@@ -88,11 +94,12 @@
     left: 0;
     letter-spacing: 0.1em;
     margin: 0;
+    
     @include md-min {
       font-size: 1.25rem;
     }
     @include md {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
     
   }
